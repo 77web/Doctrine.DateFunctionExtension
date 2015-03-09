@@ -1,0 +1,27 @@
+{
+    "name": "nanaweb/doctrinedatefunctionextension",
+    "description":" ",
+    "keywords":[
+    ],
+    "license": "BSD-3-Clause",
+    "autoload":{
+        "psr-4":{
+            "Nanaweb\\Doctrine\\DateFunctionExtension\\": "src/"
+        }
+    },
+    "autoload-dev":{
+        "psr-4":{
+            "Nanaweb\\Doctrine\\DateFunctionExtension\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-develop": "0.1.x-dev"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~3.7"
+    }
+}
