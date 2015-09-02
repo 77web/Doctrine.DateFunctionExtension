@@ -19,8 +19,8 @@ $ composer require nanaweb/doctrine-date-function-extension:dev-master@dev
 ```php
 $config = new \Doctrine\ORM\Configuration();
 $config->addCustomDatetimeFunction('month', '\Nanaweb\Doctrine\DateFunctionExtension\MySql\Month');
-$config->addCustomDatetimeFunction('month', '\Nanaweb\Doctrine\DateFunctionExtension\MySql\Weekday');
-$config->addCustomDatetimeFunction('month', '\Nanaweb\Doctrine\DateFunctionExtension\MySql\Year');
+$config->addCustomDatetimeFunction('weekday', '\Nanaweb\Doctrine\DateFunctionExtension\MySql\Weekday');
+$config->addCustomDatetimeFunction('year', '\Nanaweb\Doctrine\DateFunctionExtension\MySql\Year');
 
 $em = EntityManager::create($dbParams, $config);
 ```
