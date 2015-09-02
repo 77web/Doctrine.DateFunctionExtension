@@ -21,6 +21,7 @@ $config = new \Doctrine\ORM\Configuration();
 $config->addCustomDatetimeFunction('month', '\Nanaweb\Doctrine\DateFunctionExtension\MySql\Month');
 $config->addCustomDatetimeFunction('weekday', '\Nanaweb\Doctrine\DateFunctionExtension\MySql\Weekday');
 $config->addCustomDatetimeFunction('year', '\Nanaweb\Doctrine\DateFunctionExtension\MySql\Year');
+$config->addCustomDatetimeFunction('weekofyear', '\Nanaweb\Doctrine\DateFunctionExtension\MySql\WeekOfYear');
 
 $em = EntityManager::create($dbParams, $config);
 ```
@@ -40,5 +41,6 @@ Configure functions in ``config.yml``.
                         month: \Nanaweb\Doctrine\DateFunctionExtension\MySql\Month
                         weekday: \Nanaweb\Doctrine\DateFunctionExtension\MySql\Weekday
                         year: \Nanaweb\Doctrine\DateFunctionExtension\MySql\Year
+                        weekofyear: \Nanaweb\Doctrine\DateFunctionExtension\MySql\WeekOfYear
 
 ```
