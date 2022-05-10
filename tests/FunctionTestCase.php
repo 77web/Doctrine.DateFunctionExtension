@@ -1,32 +1,28 @@
 <?php
 
-
 namespace Nanaweb\Doctrine\DateFunctionExtension;
 
+use Doctrine\ORM\Query\AST\Node;
+use Doctrine\ORM\Query\SqlWalker;
+use PHPUnit\Framework\TestCase;
 
-class FunctionTestCase extends \PHPUnit_Framework_TestCase
+class FunctionTestCase extends TestCase
 {
-    /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|\Doctrine\ORM\Query\AST\Node
-     */
-    protected function createExpressionMock()
+    protected function createExpressionMock(): Node
     {
-        $expression = $this->getMock('Doctrine\ORM\Query\AST\Node');
+        $expression = $this->createMock(Node::class);
         $expression
             ->expects($this->once())
             ->method('dispatch')
-            ->with($this->isInstanceOf('Doctrine\ORM\Query\SqlWalker'))
+            ->with($this->isInstanceOf(SqlWalker::class))
             ->will($this->returnValue('{DATE EXPRESSION}'))
         ;
 
         return $expression;
     }
 
-    /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|\Doctrine\ORM\Query\SqlWalker
-     */
-    protected function createSqlWalkerMock()
+    protected function createSqlWalkerMock(): SqlWalker
     {
-        return $this->getMockBuilder('Doctrine\ORM\Query\SqlWalker')->disableOriginalConstructor()->getMock();
+        return $this->getMockBuilder(SqlWalker::class)->disableOriginalConstructor()->getMock();
     }
 }
