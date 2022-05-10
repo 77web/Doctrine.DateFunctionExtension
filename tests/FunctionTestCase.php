@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class FunctionTestCase extends TestCase
 {
-    protected function createExpressionMock()
+    protected function createExpressionMock(): Node
     {
         $expression = $this->createMock(Node::class);
         $expression
@@ -21,7 +21,7 @@ class FunctionTestCase extends TestCase
         return $expression;
     }
 
-    protected function createSqlWalkerMock()
+    protected function createSqlWalkerMock(): SqlWalker
     {
         return $this->getMockBuilder(SqlWalker::class)->disableOriginalConstructor()->getMock();
     }
